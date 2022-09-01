@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar color="tertiary">
+    <ion-title>{{isUpdate ? 'Update': 'Add new note'}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="isUpdate">
+  <form #noteform="ngForm" (ngSubmit)="updateNote(noteform)">
+    <ion-item>
+      <ion-label position="stacked">Title</ion-label>
+      <ion-input name="title" [(ngModel)]="note.title"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Content</ion-label>
+      <ion-textarea name="content" [(ngModel)]="note.content" rows="8"></ion-textarea>
+    </ion-item>
+
+    <ion-button type="submit" expand="block" color="success">
+      <ion-icon name="save" slot="start"></ion-icon>
+      Update
+    </ion-button>
+  </form>
+</ion-content>
+<ion-content *ngIf="!isUpdate">
+  <form #note="ngForm" (ngSubmit)="addNote(note)">
+    <ion-item>
+      <ion-label position="stacked">Title</ion-label>
+      <ion-input name="title" ngModel></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Content</ion-label>
+      <ion-textarea name="content" ngModel rows="8"></ion-textarea>
+    </ion-item>
+    <ion-button type="submit" expand="block" color="primary">
+      <ion-icon name="save" slot="start"></ion-icon>
+      Save
+    </ion-button>
+  </form>
+</ion-content>
