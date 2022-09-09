@@ -7,7 +7,7 @@
       </ion-button>
     </ion-buttons>
     <ion-title>
-      HomePage
+      Hello, {{username}}!
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -24,8 +24,8 @@
             <ion-avatar class="avatar" slot="start">
               {{note.id}}
             </ion-avatar>
-            <ion-label class="title">
-              {{ note.title }}
+            <ion-label class="title" (click)="openNote(note)">
+                {{ note.title }}
             </ion-label>
           </ion-item>
           <ion-item-options side="start">

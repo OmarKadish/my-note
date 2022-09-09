@@ -15,6 +15,7 @@ export class HomePage {
   notes;
 
   userId: string;
+  username: string;
   constructor(public router: Router,
     public authService: AuthService, private alertCtrl: AlertController,
     public noteService: NoteService, private modalCtrl: ModalController) { }
@@ -23,6 +24,7 @@ export class HomePage {
     const helper = new JwtHelperService();
     var decoded = helper.decodeToken(localStorage.getItem('token'));
     this.userId = decoded.id;
+    this.username = decoded.firstname;
     this.refresh();
     console.log(this.notes);
     

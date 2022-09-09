@@ -8,12 +8,12 @@
   <form #noteform="ngForm" (ngSubmit)="updateNote(noteform)">
     <ion-item>
       <ion-label position="stacked">Title</ion-label>
-      <ion-input name="title" [(ngModel)]="note.title"></ion-input>
+      <ion-input name="title" [(ngModel)]="note.title" required="required"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label position="stacked">Content</ion-label>
-      <ion-textarea name="content" [(ngModel)]="note.content" rows="8"></ion-textarea>
+      <ion-textarea name="content" [(ngModel)]="note.content" rows="8" required="required"></ion-textarea>
     </ion-item>
 
     <ion-button type="submit" expand="block" color="success">
@@ -26,13 +26,14 @@
   <form #note="ngForm" (ngSubmit)="addNote(note)">
     <ion-item>
       <ion-label position="stacked">Title</ion-label>
-      <ion-input name="title" ngModel></ion-input>
+      <ion-input name="title" ngModel required="required"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label position="stacked">Content</ion-label>
-      <ion-textarea name="content" ngModel rows="8"></ion-textarea>
+      <ion-textarea name="content" ngModel rows="8" required="required"></ion-textarea>
     </ion-item>
+    <ion-label color="danger">{{message}}</ion-label>
     <ion-button type="submit" expand="block" color="primary">
       <ion-icon name="save" slot="start"></ion-icon>
       Save

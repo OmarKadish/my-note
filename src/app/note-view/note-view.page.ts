@@ -15,6 +15,7 @@ export class NoteViewPage implements OnInit {
   isUpdate = false;
   @Input() id: string;
   userId: string;
+  message: string;
   constructor(public noteService: NoteService,
     private modalCtrl: ModalController,) { }
 
@@ -32,18 +33,24 @@ export class NoteViewPage implements OnInit {
 
 
   addNote(form: NgForm) {
-    const noteToSave = form.value;
-    noteToSave.user_id = this.userId;
-    this.noteService.create(noteToSave).subscribe(response => {
-      this.modalCtrl.dismiss(response, 'saved succesfuly');
-    });
+    if (form.value.title) {
+      const noteToSave = form.value;
+      noteToSave.user_id = this.userId;
+      this.noteService.create(noteToSave).subscribe(response => {
+        this.modalCtrl.dismiss(response, 'saved succesfuly');
+      });
+    }
+    this.message = "The note title cann't be empty."
   }
 
   updateNote(form: NgForm) {
-    const noteToSave = form.value;
-    this.noteService.update(noteToSave, this.note.id).subscribe(response => {
-      this.modalCtrl.dismiss(response, 'updated succesfuly');
-    });
+    if (form.value.title) {
+      const noteToSave = form.value;
+      this.noteService.update(noteToSave, this.note.id).subscribe(response => {
+        this.modalCtrl.dismiss(response, 'updated succesfuly');
+      });
+    }
+    this.message = "The note title cann't be empty."
   }
 
 
