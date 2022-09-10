@@ -1,7 +1,7 @@
 # my-note
 MyNote app focuses on being simple.
 
-This app had been built with Ionic Framework and using PHP as the back-end in the https://github.com/OmarKadish/noteApp_backend repository.
+This app had been built with Ionic Framework and using PHP as the back-end in the https://github.com/OmarKadish/noteApp_backend.git repository.
 
 ## The Code
 This is an Ionic App. Ionic allows us to build native iOS and Android applications, and mobile-ready Progressive Web Apps and this allows us to develop faster.
@@ -39,9 +39,9 @@ Add and edit model:
 
 ## :floppy_disk: Setup
 
-* Clone the repo `git clone https://github.com/OmarKadish/my-note`
+* Clone the repo `git clone https://github.com/OmarKadish/my-note.git`
 * Run `npm install` to install all dependencies.
-* Clone the back-end [repo](https://github.com/OmarKadish/noteApp_backend) to your www directory or the root folder of your web server like XAMPP, Wamp, usewebserver, etc.
+* Clone the back-end [repo](https://github.com/OmarKadish/noteApp_backend.git) to your www directory or the root folder of your web server like XAMPP, Wamp, usewebserver, etc.
 * Run `ionic serve` in my-note to start the development environment.
 
 
